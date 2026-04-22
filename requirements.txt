@@ -1,0 +1,67 @@
+# requirements.txt
+# =================
+# MiniLM project dependencies
+# "A bilingual PT+EN LLM built from scratch"
+#
+# Installation:
+#   pip3 install -r requirements.txt
+#
+# Tested with Python 3.10+ and CUDA 12.x (RTX 4060 Ti 16GB)
+
+# ─────────────────────────────────────────────────────────────
+# Core — Deep Learning
+# ─────────────────────────────────────────────────────────────
+
+# PyTorch — main framework
+# Install the CUDA-enabled version at https://pytorch.org/get-started/locally/
+# Example for CUDA 12.1:
+#   pip3 install torch --index-url https://download.pytorch.org/whl/cu121
+torch>=2.1.0
+
+# ─────────────────────────────────────────────────────────────
+# Data and corpus
+# ─────────────────────────────────────────────────────────────
+
+# HuggingFace Datasets — download and streaming of TinyStories and CulturaX
+datasets>=2.16.0
+
+# Apache Arrow — efficient storage of the processed corpus
+pyarrow>=14.0.0
+
+# ─────────────────────────────────────────────────────────────
+# Tokenizer
+# ─────────────────────────────────────────────────────────────
+
+# Regex with full Unicode support (used in the BPE tokenizer)
+# Replaces the standard 're' module for better PT/EN text handling
+regex>=2023.10.3
+
+# ─────────────────────────────────────────────────────────────
+# Export and publication
+# ─────────────────────────────────────────────────────────────
+
+# Safetensors — safe and efficient format for saving model weights
+# Safer alternative to pickle/pytorch_model.bin
+safetensors>=0.4.0
+
+# HuggingFace Hub — upload the model to huggingface.co
+huggingface-hub>=0.20.0
+
+# ─────────────────────────────────────────────────────────────
+# Utilities
+# ─────────────────────────────────────────────────────────────
+
+# Progress bars in the data pipeline and training loop
+tqdm>=4.66.0
+
+# ─────────────────────────────────────────────────────────────
+# Optional — recommended but not required
+# ─────────────────────────────────────────────────────────────
+
+# Training monitoring via browser (alternative to file logging)
+# Usage: tensorboard --logdir ./checkpoints
+# tensorboard>=2.15.0
+
+# Weights & Biases — advanced monitoring with charts and run comparison
+# Usage: wandb login && wandb init
+# wandb>=0.16.0
